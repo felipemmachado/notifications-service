@@ -2,8 +2,10 @@ import { Controller, Get, Post } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
 import { Body } from '@nestjs/common/decorators';
 import { CreateNotificationBody } from './create-notification-body';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('notifications')
+@ApiTags('Notifications')
 export class AppController {
   constructor(private readonly prisma: PrismaService) {}
 
