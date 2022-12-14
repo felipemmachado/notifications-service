@@ -1,4 +1,4 @@
-import { IsEnum, IsNotEmpty, IsUUID, Length } from 'class-validator';
+import { IsNotEmpty, IsUUID, Length } from 'class-validator';
 
 /*
 export enum Category {
@@ -7,7 +7,7 @@ export enum Category {
   SALES = 2,
 } */
 
-export class CreateNotificationBody {
+export class CreateNotificationDTO {
   @IsUUID()
   @IsNotEmpty()
   recipientId: string;
