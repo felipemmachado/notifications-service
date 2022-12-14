@@ -1,7 +1,7 @@
 import { Controller, Get, Post } from '@nestjs/common';
-import { PrismaService } from './infra/prisma.service';
+import { PrismaService } from './prisma.service';
 import { Body } from '@nestjs/common/decorators';
-import { CreateNotificationBody } from './infra/create-notification-body';
+import { CreateNotificationBody } from './create-notification-body';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('notifications')
