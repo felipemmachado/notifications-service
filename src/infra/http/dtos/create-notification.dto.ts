@@ -10,13 +10,13 @@ export enum Category {
 export class CreateNotificationDTO {
   @IsUUID()
   @IsNotEmpty()
-  recipientId: string;
+  public recipientId: string;
 
   @IsNotEmpty()
   @Length(5, 240)
-  content: string;
+  public content: string;
 
   // @IsEnum(Category)
   @IsNotEmpty()
-  category: string;
+  public category: string;
 }
