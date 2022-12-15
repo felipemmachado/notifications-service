@@ -4,6 +4,7 @@ import { Body } from '@nestjs/common/decorators';
 import { CreateNotificationDTO } from '../dtos/create-notification.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { SendNotification } from '@application/use-cases/send-notification';
+import { NotificationViewModel } from '../view-models/notification-view-model';
 
 @Controller('notifications')
 @ApiTags('Notifications')
@@ -22,6 +23,6 @@ export class NotificationsController {
       content,
     });
 
-    return { notification };
+    return { notification: NotificationViewModel.toHTTP(notification) };
   }
 }
