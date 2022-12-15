@@ -3,7 +3,7 @@ import { Controller, Post } from '@nestjs/common';
 import { Body } from '@nestjs/common/decorators';
 import { CreateNotificationDTO } from '../dtos/create-notification.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { SendNotification } from '@application/use-cases/send-notification';
+import { SendNotification } from '@application/use-cases/send-notification/send-notification';
 import { NotificationViewModel } from '../view-models/notification-view-model';
 
 @Controller('notifications')
