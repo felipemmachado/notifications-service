@@ -1,8 +1,6 @@
 import { Content } from '@domain/entities/notification/content';
-import {
-  Notification,
-  NotificationProps,
-} from '@domain/entities/notification/notification';
+import { NotificationProps } from '@domain/entities/notification/notification';
+import { Notification } from '@domain/entities/notification/Notification';
 
 type Override = Partial<NotificationProps>;
 

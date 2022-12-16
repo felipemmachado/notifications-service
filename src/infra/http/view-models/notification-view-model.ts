@@ -1,4 +1,4 @@
-import { Notification } from '@domain/entities/notification/notification';
+import { Notification } from '@domain/entities/notification/Notification';
 import { NotificationDTO } from '../dtos/notification.dto';
 
 export class NotificationViewModel {

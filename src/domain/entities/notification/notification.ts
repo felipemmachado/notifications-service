@@ -1,6 +1,6 @@
-import { Replace } from '@helpers/replace';
 import { Content } from './content';
-import { randomUUID } from 'node:crypto';
+import { Replace } from '@helpers/replace';
+import { BaseEntity } from '../common/base-entity';
 
 export interface NotificationProps {
   recipientId: string;
@@ -11,25 +11,19 @@ export interface NotificationProps {
   createdAt: Date;
 }
 
-export class Notification {
-  private _id: string;
+export class Notification extends BaseEntity {
   private props: NotificationProps;
 
   constructor(
     props: Replace<NotificationProps, { createdAt?: Date }>,
     id?: string,
   ) {
-    this._id = id ?? randomUUID();
+    super(id);
     this.props = {
       ...props,
       createdAt: props.createdAt ?? new Date(),
     };
   }
-
-  public get id() {
-    return this._id;
-  }
-
   public set content(content: Content) {
     this.props.content = content;
   }
