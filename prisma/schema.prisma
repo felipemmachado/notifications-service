@@ -10,11 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Category {
+  id           String         @id @db.Uuid
+  name         String
+  Notification Notification[]
+}
+
 model Notification {
-  id          String    @id
-  recipientId String
+  id          String    @id @db.Uuid
+  recipientId String    @db.Uuid
   content     String
-  category    String
+  categoryId  String    @db.Uuid
+  category    Category  @relation(fields: [categoryId], references: [id])
   readAt      DateTime?
   createdAt   DateTime  @default(now())
   canceledAt  DateTime?
