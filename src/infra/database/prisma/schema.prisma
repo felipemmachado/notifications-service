@@ -23,6 +23,7 @@ model Notification {
   categoryId  String    @db.Uuid
   category    Category  @relation(fields: [categoryId], references: [id])
   readAt      DateTime?
+  newCap      String
   createdAt   DateTime  @default(now())
   canceledAt  DateTime?
 
